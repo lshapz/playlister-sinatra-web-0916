@@ -1,0 +1,20 @@
+
+Song Forms
+  /songs/new
+    without an existing artist
+      creates a new artist on submit (FAILED - 13)
+      creates a new song on submit (FAILED - 14)
+      redirects to '/songs/:slug' after creation (FAILED - 15)
+    with an existing artist
+      does not create a new artist (FAILED - 16)
+      creates a new song and associates it with an existing artist (FAILED - 17)
+      redirects to '/songs/:slug' after creation (FAILED - 18)
+  /songs/:slug/edit
+    changing a song's artist
+      updates the song's artist (FAILED - 19)
+      renders to the song show page (FAILED - 20)
+    changing a song's genres
+      has a checkbox element on the form (FAILED - 21)
+      updates the song's genres (FAILED - 22)
+      renders to the song show page (FAILED - 23)
+
