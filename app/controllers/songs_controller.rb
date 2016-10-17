@@ -1,4 +1,8 @@
+require 'rack-flash'
+
 class SongsController < ApplicationController
+    use Rack::Flash
+
   get '/songs' do
     @songs = Song.all 
     erb :'songs/index'
@@ -25,8 +29,10 @@ class SongsController < ApplicationController
     #binding.pry
     #slug = @song.slug
     #erb :'songs/show' 
-    redirect to "/songs/#{@song.slug}"
-  end 
+     flash[:message] = "Successfully created song."
+
+    redirect to ("/songs/#{@song.slug}")
+   end 
 
 
   get '/songs/:slug' do 
@@ -56,7 +62,8 @@ class SongsController < ApplicationController
     @song.genres.uniq
        #binding.pry
     @song.save
-    redirect to "/songs/#{@song.slug}"
+    flash[:message] = "Successfully updated song."
+    redirect to ("/songs/#{@song.slug}")
   end 
 
 
