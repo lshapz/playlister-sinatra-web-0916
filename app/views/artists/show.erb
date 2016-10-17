@@ -7,3 +7,9 @@
 <ul><% @artist.genres.uniq.each do |genre| %>
 <p><li><a href="/genres/<%=genre.slug%>"><%= genre.name.capitalize %></a></li></p>
 <% end %></ul></h3>
+
+
+<a href="/artists">Artists</a>
+<a href="/songs">Songs</a>
+<a href="/genres">Genres</a>
+<a href="/">Home</a>
