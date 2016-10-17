@@ -2,7 +2,8 @@
   <%= flash[:message] %>
 <% end %>
 <h1><%= @song.name %></h1>
-<h3>Artist: <p><a href="/artists/<%=@song.artist.slug%>"><%= @song.artist.name %></a></p></h3>
+<h3>Artist:
+  <a href="/artists/<%=@song.artist.slug%>"><%= @song.artist.name %></a></p></h3>
 <h3><p> Genres:</p><ul> <% @song.genres.each do |genre|  %>
  <p><li><a href="/genres/<%=genre.slug%>"><%= genre.name.capitalize %></a></li></p>
 <% end %></h3></ul>
