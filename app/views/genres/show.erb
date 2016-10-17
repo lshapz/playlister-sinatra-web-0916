@@ -1,9 +1,11 @@
-<%= @genre.name %>
-<br>Songs
-<% @genre.songs.each do |song| %>
-<p><a href="/songs/<%=song.slug%>"><%= song.name %></a></p>
-<% end %>
-Artists
+<h1><%= @genre.name.upcase %></h1>
+<h2>Songs</h2>
+<ul><% @genre.songs.each do |song| %>
+<li><p><a href="/songs/<%=song.slug%>"><%= song.name %></a></p></li>
+<% end %></ul>
+<h2>Artists</h2>
+<ul>
 <% @genre.artists.each do |artist| %>
-<p><a href="/artists/<%=artist.slug%>"><%= artist.name %></a></p>
+<li><p><a href="/artists/<%=artist.slug%>"><%= artist.name %></a></p></li>
 <% end %>
+</ul>
