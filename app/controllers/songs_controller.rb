@@ -38,6 +38,7 @@ class SongsController < ApplicationController
   get '/songs/:slug' do 
     @song = Song.find_by_slug(params[:slug])
     if @song == nil
+      flash[:message] = "No Such Song."
       redirect to ("/songs/new")
     else 
       erb :'songs/show'
